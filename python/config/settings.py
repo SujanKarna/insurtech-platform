@@ -31,3 +31,10 @@ GDV_AUB_RAW_PATH = RAW_DATA_DIR / "gdv" / "aub" / GDV_AUB_FILENAME
 
 DOWNLOAD_TIMEOUT_SECONDS = 60
 DOWNLOAD_CHUNK_SIZE_BYTES = 8192
+
+# ---------------------------------------------------------------------------
+# Text cleaning
+# ---------------------------------------------------------------------------
+
+BODY_TEXT_FONT_SIZE = 9.96
+FONT_SIZE_TOLERANCE = 0.05
