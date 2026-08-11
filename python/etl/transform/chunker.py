@@ -137,8 +137,7 @@ def _build_context_prefix(
         return ""
 
     return (
-        "Document structure:\n"
-        + "\n".join(
+        "\n".join(
             section_path
         )
         + "\n\n"

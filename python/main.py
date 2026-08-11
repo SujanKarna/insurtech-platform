@@ -7,6 +7,7 @@ from pathlib import Path
 from config.settings import (
     GDV_AUB_RAW_PATH,
     GDV_AUB_URL,
+    GDV_AUB_CHUNKS_PATH
 )
 
 
@@ -33,6 +34,11 @@ from etl.transform.chunker import create_chunks
 
 from models.document_zone import DocumentZone
 
+# ============================================================================
+# Load
+# ============================================================================
+
+from etl.load.chunk_writer import write_chunks_jsonl
 
 # ============================================================================
 # Inspection utilities
@@ -487,14 +493,25 @@ def run_pipeline() -> None:
         document_id="gdv_aub",
     )
 
-    print(
-        f"Chunks created: {len(chunks)}"
+    # ========================================================================
+    # STEP 7
+    # Persist chunks
+    # ========================================================================
+
+    print("\n[7/7] Saving chunks...")
+
+    chunks_path = write_chunks_jsonl(
+        chunks=chunks,
+        output_path=GDV_AUB_CHUNKS_PATH,
     )
 
-    inspect_chunks(
-    chunks,
-    limit=10,
-    )
+    # print(
+    #     f"Chunks saved : {len(chunks)}"
+    # )
+
+    # print(
+    #     f"Output file  : {chunks_path}"
+    # )
 
     # ========================================================================
     # Pipeline finished

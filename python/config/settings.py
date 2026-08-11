@@ -38,3 +38,45 @@ DOWNLOAD_CHUNK_SIZE_BYTES = 8192
 
 BODY_TEXT_FONT_SIZE = 9.96
 FONT_SIZE_TOLERANCE = 0.05
+
+
+
+# ---------------------------------------------------------------------------
+# Processed document artifacts
+# ---------------------------------------------------------------------------
+
+CHUNKS_DIR = PROCESSED_DATA_DIR / "chunks"
+
+GDV_AUB_CHUNKS_PATH = (
+    CHUNKS_DIR / "gdv_aub_chunks.jsonl"
+)
+
+
+# ---------------------------------------------------------------------------
+# Embedding configuration
+# ---------------------------------------------------------------------------
+
+EMBEDDING_MODEL_NAME = "BAAI/bge-m3"
+
+EMBEDDING_DIMENSION = 1024
+
+EMBEDDINGS_DIR = (
+    PROCESSED_DATA_DIR
+    / "embeddings"
+)
+
+GDV_AUB_EMBEDDINGS_PATH = (
+    EMBEDDINGS_DIR
+    / "gdv_aub_embeddings.jsonl"
+)
+
+# ---------------------------------------------------------------------------
+# Qdrant
+# ---------------------------------------------------------------------------
+
+QDRANT_HOST = "localhost"
+QDRANT_PORT = 6333
+
+QDRANT_COLLECTION_NAME = "gdv_aub"
+
+EMBEDDING_DIMENSION = 1024
