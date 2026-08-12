@@ -41,6 +41,12 @@ from models.document_zone import DocumentZone
 from etl.load.chunk_writer import write_chunks_jsonl
 
 # ============================================================================
+# Embeddings Loading
+# ============================================================================
+
+from vector_store.qdrant_loader import QdrantLoader
+
+# ============================================================================
 # Inspection utilities
 # ============================================================================
 
@@ -512,6 +518,19 @@ def run_pipeline() -> None:
     # print(
     #     f"Output file  : {chunks_path}"
     # )
+    print("Starting Insurtech pipeline...")
+
+    # --------------------------------------------------------
+    # Load embeddings into Qdrant
+    # --------------------------------------------------------
+
+    loader = QdrantLoader()
+
+    count = loader.load_jsonl()
+
+    print(
+        f"Vector ingestion completed: {count} chunks."
+    )
 
     # ========================================================================
     # Pipeline finished

@@ -70,13 +70,16 @@ GDV_AUB_EMBEDDINGS_PATH = (
     / "gdv_aub_embeddings.jsonl"
 )
 
-# ---------------------------------------------------------------------------
-# Qdrant
-# ---------------------------------------------------------------------------
+
+
+# ============================================================
+# QDRANT
+# ============================================================
 
 QDRANT_HOST = "localhost"
 QDRANT_PORT = 6333
 
 QDRANT_COLLECTION_NAME = "gdv_aub"
 
-EMBEDDING_DIMENSION = 1024
+QDRANT_VECTOR_SIZE = 1024
+QDRANT_DISTANCE = "Cosine"

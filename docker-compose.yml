@@ -1,0 +1,6 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: insurtech-qdrant
+    ports:
+      - "6333:6333"
